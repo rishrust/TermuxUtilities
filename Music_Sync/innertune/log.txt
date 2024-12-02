@@ -1,0 +1,3 @@
+[using samba in termux ]
+- install samba and mount using termeux
+

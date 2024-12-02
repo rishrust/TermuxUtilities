@@ -1,0 +1,20 @@
+1729350047894
+1729350047937
+1
+16
+access-control-allow-origin: *
+timing-allow-origin: *
+access-control-expose-headers: Content-Length
+content-disposition: inline;filename="unnamed.jpg"
+x-content-type-options: nosniff
+server: fife
+content-length: 73820
+x-xss-protection: 0
+date: Sat, 19 Oct 2024 14:02:19 GMT
+expires: Sun, 20 Oct 2024 14:02:19 GMT
+cache-control: public, max-age=86400, no-transform
+age: 3509
+etag: "v1"
+content-type: image/jpeg
+vary: Origin
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000

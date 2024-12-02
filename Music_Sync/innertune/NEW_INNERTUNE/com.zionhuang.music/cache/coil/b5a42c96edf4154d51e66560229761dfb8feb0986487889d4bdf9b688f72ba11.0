@@ -1,0 +1,21 @@
+1729308219803
+1729308219897
+1
+17
+accept-ranges: bytes
+cross-origin-resource-policy: cross-origin
+cross-origin-opener-policy-report-only: same-origin; report-to="youtube"
+report-to: {"group":"youtube","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/youtube"}]}
+timing-allow-origin: *
+content-length: 32232
+x-content-type-options: nosniff
+server: sffe
+x-xss-protection: 0
+date: Sat, 19 Oct 2024 03:23:40 GMT
+expires: Sat, 19 Oct 2024 05:23:40 GMT
+cache-control: public, max-age=7200
+etag: "1655242786"
+content-type: image/jpeg
+vary: Origin
+age: 0
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000

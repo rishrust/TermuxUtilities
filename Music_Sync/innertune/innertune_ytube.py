@@ -3,6 +3,7 @@ import os
 import sync
 from sync import to_youtube,get_songs_from_youtube_playlist,get_youtube_playlist_songs
 from time import sleep
+#your playlist_id
 PLAYLIST_ID="PLga65AAwFBxh8oWz0P0cq8XafewLx6Qga"
 
 #changing permission of vimusic folder
@@ -74,7 +75,6 @@ def innertune_liked_to_youtube(local_liked):
 
 
 # Sync music from youtube to innertune
-
 def youtube_to_innertune_help(db_file, title, video_id, thumbnailUrl, albumName):
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
@@ -115,7 +115,6 @@ def youtube_to_innertune(PLAYLIST_ID):
 
 
     
-
 
 
 

@@ -1,4 +1,5 @@
 import os
+import sqlite3
 import pickle
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
@@ -144,9 +145,52 @@ def get_songs_from_youtube_playlist(playlist_id):
     for item in all_songs:
         title = item['snippet']['title']
         video_id = item['snippet']['resourceId']['videoId']
-        print(item['snippet'])
+        # print(item['snippet'])
         # print(item)
         # print(video_id)
     
 
     return all_songs
+
+
+
+
+
+
+# YOUTUBE TO INNERTUNE MANGAER
+
+# Sync music from youtube to innertune
+def youtube_to_innertune_help(db_file, title, video_id, thumbnailUrl, albumName,cursor):
+
+    # Check if the video_id already exists in the database
+    cursor.execute('SELECT COUNT(*) FROM song WHERE id = ?', (video_id,))
+    result = cursor.fetchone()
+
+    if result[0] == 0:
+        # If video_id does not exist, insert the new record
+        cursor.execute('''
+        INSERT INTO song 
+        (id, title, thumbnailUrl, albumName,totalPlayTime,liked,inLibrary,duration)
+        VALUES (?, ?, ?, ?, ?,?,?,?)
+        ''', (video_id, title, thumbnailUrl, albumName, '199',1,'199',0))
+        
+        print("Record inserted successfully.")
+    else:
+        print("Record already exists.")
+    
+
+
+
+def youtube_to_innertune_commit(PLAYLIST_ID,db_file,cursor):
+    all_songs=get_songs_from_youtube_playlist(PLAYLIST_ID)
+
+    for song in all_songs:
+        title=song['snippet']['title']
+        video_id=song['snippet']['resourceId']['videoId']
+        thumbnailUrl=song['snippet']['thumbnails']['default']['url']
+        albumName=song['snippet']['videoOwnerChannelTitle']
+        if " - Topic" in albumName:
+            albumName=albumName.strip(" - Topic")
+        
+        youtube_to_innertune_help(db_file,title,video_id,thumbnailUrl,albumName,cursor)
+
