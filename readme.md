@@ -1,1 +1,1 @@
-some termux scripts to make android better
+Python Scripts to make android better to use..
